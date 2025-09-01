@@ -232,5 +232,9 @@ elif hemisferio == "2":
 
 
 else: 
-    print("los datos ingresados no son válidos")    
+    print("los datos ingresados no son válidos")   
+
+
+ 
+
 
