@@ -103,16 +103,31 @@
 #restarlos, multiplicarlos y dividirlos. Mostrar los resultados de forma clara.
 
 #Definir función
-def operaciones_basicas (a,b):
-    suma = a + b
-    resta = a - b
-    multiplicacion = a * b
-    division = a / b
-    return (suma, resta, multiplicacion, division)
-#Programa principal
-num1 = int(input("Ingrese el primer número " ))
-num2 = int(input("Ingrese el segundo número " ))
-resultado = operaciones_basicas(num1, num2)
-print (f"Hechas las operaciones básicas suma, resta, multiplicación y división, es resultado es: {resultado}")
+# def operaciones_basicas (a,b):
+#     suma = a + b
+#     resta = a - b
+#     multiplicacion = a * b
+#     division = a / b
+#     return (suma, resta, multiplicacion, division)
+# #Programa principal
+# num1 = int(input("Ingrese el primer número " ))
+# num2 = int(input("Ingrese el segundo número " ))
+# resultado = operaciones_basicas(num1, num2)
+# print (f"Hechas las operaciones básicas suma, resta, multiplicación y división, es resultado es: {resultado}")
 
+###################################################################################################################
+#Crear una función llamada calcular_imc(peso, altura) que reciba el
+#peso en kilogramos y la altura en metros, y devuelva el índice de
+#masa corporal (IMC). Solicitar al usuario los datos y
+# llamar a la función para mostrar el resultado con dos decimales.
+
+#Definir función
+def calcular_imc (peso, altura):
+    return round ( peso / (altura*altura),2)
+
+#Programa principal
+val1 = float(input("Ingrese su peso en kilos "))
+val2 = float( input("Ingrese su altura en metros "))
+indice1 = calcular_imc (val1, val2)
+print (f"El indice de masa corporal es: {indice1}")
 
