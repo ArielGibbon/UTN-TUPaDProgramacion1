@@ -218,33 +218,39 @@
 # • Mostrar el día con mayores ventas totales.
 # • Indicar cuál fue el producto más vendido en la semana.
 
-ventas = [
-    ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],        
-    ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],        
-    ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],    
-    ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7']
-]
-cant_filas = len(ventas)
-for x in range(cant_filas):
-    print(ventas[x])
+# ventas = [
+#     ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],        
+#     ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],        
+#     ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7'],    
+#     ['dia1','dia2', 'dia3', 'dia4', 'dia5', 'dia6', 'dia7']
+# ]
+# cant_filas = len(ventas)
+# venta_diaria = 0
+# max_ventas = 0
+# for x in range(cant_filas):
+#     print(ventas[x])
 
-for i in range(7):
-    prod1 = int(input("Ingrese la cantidad vendida del producto 1 "))
-    prod2 = int(input("Ingrese la cantidad vendida del producto 2 "))
-    prod3 = int(input("Ingrese la cantidad vendida del producto 3 "))
-    prod4 = int(input("Ingrese la cantidad vendida del producto 4 "))
-    ventas[0].pop(0)
-    ventas[0].append(prod1)
-    ventas[1].pop(0)
-    ventas[1].append(prod2)
-    ventas[2].pop(0)
-    ventas[2].append(prod3)
-    ventas[3].pop(0)
-    ventas[3].append(prod4)
-cant_filas = len(ventas)
-for x in range(cant_filas):
-    print(ventas[x])
 
+# for i in range(7):
+#     prod1 = int(input("Ingrese la cantidad vendida del producto 1 "))
+#     prod2 = int(input("Ingrese la cantidad vendida del producto 2 "))
+#     prod3 = int(input("Ingrese la cantidad vendida del producto 3 "))
+#     prod4 = int(input("Ingrese la cantidad vendida del producto 4 "))
+#     ventas[0].pop(0)
+#     ventas[0].append(prod1)
+#     ventas[1].pop(0)
+#     ventas[1].append(prod2)
+#     ventas[2].pop(0)
+#     ventas[2].append(prod3)
+#     ventas[3].pop(0)
+#     ventas[3].append(prod4)
+# cant_filas = len(ventas)
+# for x in range(cant_filas):
+#     print(ventas[x])
+
+nombre = input("Escribe tu nombre ")
+print (f"Hola {nombre}!")
+print (f"Tu nombre tiene {len (nombre)}  letras")
 
 
 
