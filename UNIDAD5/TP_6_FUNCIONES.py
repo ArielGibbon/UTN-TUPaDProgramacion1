@@ -121,13 +121,25 @@
 #masa corporal (IMC). Solicitar al usuario los datos y
 # llamar a la función para mostrar el resultado con dos decimales.
 
-#Definir función
-def calcular_imc (peso, altura):
-    return round ( peso / (altura*altura),2)
+# #Definir función
+# def calcular_imc (peso, altura):
+#     return round ( peso / (altura*altura),2)
 
+# #Programa principal
+# val1 = float(input("Ingrese su peso en kilos "))
+# val2 = float( input("Ingrese su altura en metros "))
+# indice1 = calcular_imc (val1, val2)
+# print (f"El indice de masa corporal es: {indice1}")
+
+################################################################################################
+#Crear una función llamada celsius_a_fahrenheit(celsius) que reciba
+#una temperatura en grados Celsius y devuelva su equivalente en
+#Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
+#resultado usando la función.
+#definir funciones
+def celsius_a_fahrenheit (celsius):
+    return (1.8 * celsius) + 32
 #Programa principal
-val1 = float(input("Ingrese su peso en kilos "))
-val2 = float( input("Ingrese su altura en metros "))
-indice1 = calcular_imc (val1, val2)
-print (f"El indice de masa corporal es: {indice1}")
-
+temp = float(input("Ingrese la temperatura en grados Celsius "))
+fahren = celsius_a_fahrenheit(temp)
+print (f"La temperatura es de {fahren} grados Fahrenheit")
