@@ -137,9 +137,25 @@
 #Fahrenheit. Pedir al usuario la temperatura en Celsius y mostrar el
 #resultado usando la función.
 #definir funciones
-def celsius_a_fahrenheit (celsius):
-    return (1.8 * celsius) + 32
+# def celsius_a_fahrenheit (celsius):
+#     return (1.8 * celsius) + 32
+# #Programa principal
+# temp = float(input("Ingrese la temperatura en grados Celsius "))
+# fahren = celsius_a_fahrenheit(temp)
+# print (f"La temperatura es de {fahren} grados Fahrenheit")
+
+###########################################################################################3
+
+#Crear una función llamada calcular_promedio(a, b, c) que reciba
+#tres números como parámetros y devuelva el promedio de ellos.
+#Solicitar los números al usuario y mostrar el resultado usando esta
+#función.
+#Definir funcion
+def calcular_promedio(a,b,c):
+    return round( (a + b + c) / 3 , 2)
 #Programa principal
-temp = float(input("Ingrese la temperatura en grados Celsius "))
-fahren = celsius_a_fahrenheit(temp)
-print (f"La temperatura es de {fahren} grados Fahrenheit")
+nota1 = float(input("Ingrese la primera nota "))
+nota2 = float(input("Ingrese la segunda nota "))
+nota3 = float(input("Ingrese la tercer nota "))
+promedio = calcular_promedio(nota1, nota2, nota3)
+print (f"El promedio de las 3 notas es: {promedio}")
