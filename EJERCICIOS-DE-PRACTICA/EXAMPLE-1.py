@@ -35,17 +35,34 @@
 # if multiplo(num1,num2):
 #     print (f"El número {num1} es múltiplo de {num2}")
 
-def funcion_resto (num1 , num2):
-    return num1 - num2 * (num1 // num2)
+# def funcion_resto (num1 , num2):
+#     return num1 - num2 * (num1 // num2)
 
-def es_multiplo (x,y):
-    return funcion_resto (x ,y) == 0
+# def es_multiplo (x,y):
+#     return funcion_resto (x ,y) == 0
 
 
-a = int(input ("ingrese un número " ))
-b = int(input("Ingrese el otro " ))
-resto = funcion_resto(a,b)
-print (f"El resto de dividir {a} por {b} es: {resto}")
-if es_multiplo(a , b):
-    print (f"{a} es múltilo de {b}")
+# a = int(input ("ingrese un número " ))
+# b = int(input("Ingrese el otro " ))
+# resto = funcion_resto(a,b)
+# print (f"El resto de dividir {a} por {b} es: {resto}")
+# if es_multiplo(a , b):
+#     print (f"{a} es múltilo de {b}")
+#########################################################################################################3
+
+
+#LISTA CREACION 
+
+# frutas = ["banana", "manzana", "pera", "naranja"]
+# frutas.append("kiwi")
+# print (frutas)
+
+#DICCIONARIO CREACION
+
+mi_diccionario = {"nombre": "Syd", "Edad":"26 ", "profesion": "Ingeniero" }
+print (mi_diccionario["nombre"])
+print (mi_diccionario["profesion"])
+
+
+    
 
