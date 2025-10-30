@@ -120,7 +120,42 @@
 #• Agregar unidades al stock si el producto ya existe. 
 #• Agregar un nuevo producto si no existe. 
 
-inventario_ferreteria = {"martillo":"8", "pinza": "4", "francesa": "3", "llave": "6", "tenaza": "1"}
+inventario_ferreteria = {       #inventario
+    "martillo":8,
+    "pinza": 4,
+    "francesa": 3,
+    "llave": 6,
+    "tenaza": 1}
+
+
+
+while True:         #opciones
+    print("\n1. Consultar stock")
+    print("2. Agregar/Modificar producto")
+    print("3. Salir")
+    
+    opcion = input("Elegí una opción: ")
+    
+    if opcion == "1":           #ver si existe el producto
+        producto = input("Ingresá el producto: ")
+        if producto in inventario_ferreteria:
+            print(f"Stock de {producto}: {inventario_ferreteria[producto]}")
+        else:
+            print("Producto no encontrado")
+    
+    elif opcion == "2":         #agregar unidades
+        producto = input("Ingresá el producto: ")
+        cantidad = int(input("Ingresá la cantidad: "))
+        
+        if producto in inventario_ferreteria:
+            inventario_ferreteria[producto] += cantidad
+            print(f"Stock actualizado. Nuevo stock: {inventario_ferreteria[producto]}")
+        else:
+            inventario_ferreteria[producto] = cantidad
+            print(f"Producto agregado con stock: {cantidad}")
+    
+    elif opcion == "3":             
+        break
 
 ##################################################################################################################
 
@@ -128,141 +163,8 @@ inventario_ferreteria = {"martillo":"8", "pinza": "4", "francesa": "3", "llave":
 #Permití consultar qué actividad hay en cierto día y hora.
 
 # Agenda con tuplas (día, hora) como claves
-agenda = {
-    ("Lunes", "09:00"): "Reunión de equipo",
-    ("Lunes", "14:00"): "Presentación proyecto",
-    ("Martes", "10:00"): "Clase de Python",
-    ("Martes", "16:00"): "Dentista",
-    ("Miércoles", "11:00"): "Almuerzo con cliente",
-    ("Jueves", "09:00"): "Revisión de código",
-    ("Jueves", "15:00"): "Gimnasio",
-    ("Viernes", "10:00"): "Videoconferencia",
-    ("Viernes", "18:00"): "Cena con amigos"
-}
+#agenda = (lunes)
 
-def mostrar_menu():
-    print("\n" + "="*50)
-    print("           AGENDA DE EVENTOS")
-    print("="*50)
-    print("1. Consultar evento en día y hora específicos")
-    print("2. Ver todos los eventos de un día")
-    print("3. Agregar nuevo evento")
-    print("4. Eliminar evento")
-    print("5. Mostrar agenda completa")
-    print("6. Salir")
-    print("="*50)
-
-def consultar_evento():
-    dia = input("\nIngrese el día (ej: Lunes, Martes, etc.): ").strip().capitalize()
-    hora = input("Ingrese la hora (formato HH:MM, ej: 09:00): ").strip()
-    
-    clave = (dia, hora)
-    
-    if clave in agenda:
-        print(f"\n✓ {dia} a las {hora}: {agenda[clave]}")
-    else:
-        print(f"\n✗ No hay eventos programados para {dia} a las {hora}")
-
-def ver_eventos_dia():
-    dia = input("\nIngrese el día a consultar: ").strip().capitalize()
-    
-    eventos_del_dia = [(hora, evento) for (d, hora), evento in agenda.items() if d == dia]
-    
-    if eventos_del_dia:
-        print(f"\n{'='*50}")
-        print(f"   EVENTOS DEL {dia.upper()}")
-        print(f"{'='*50}")
-        eventos_del_dia.sort()  # Ordena por hora
-        for hora, evento in eventos_del_dia:
-            print(f"{hora} - {evento}")
-        print(f"{'='*50}")
-    else:
-        print(f"\n✗ No hay eventos programados para {dia}")
-
-def agregar_evento():
-    dia = input("\nIngrese el día: ").strip().capitalize()
-    hora = input("Ingrese la hora (formato HH:MM): ").strip()
-    
-    clave = (dia, hora)
-    
-    if clave in agenda:
-        print(f"\n✗ Ya existe un evento en {dia} a las {hora}: {agenda[clave]}")
-        respuesta = input("¿Desea reemplazarlo? (s/n): ").strip().lower()
-        if respuesta == 's':
-            evento = input("Ingrese el nuevo evento: ").strip()
-            agenda[clave] = evento
-            print(f"✓ Evento actualizado para {dia} a las {hora}")
-        else:
-            print("Operación cancelada")
-    else:
-        evento = input("Ingrese el evento: ").strip()
-        agenda[clave] = evento
-        print(f"✓ Evento agregado: {dia} a las {hora} - {evento}")
-
-def eliminar_evento():
-    dia = input("\nIngrese el día: ").strip().capitalize()
-    hora = input("Ingrese la hora (formato HH:MM): ").strip()
-    
-    clave = (dia, hora)
-    
-    if clave in agenda:
-        evento = agenda[clave]
-        print(f"\nEvento a eliminar: {dia} a las {hora} - {evento}")
-        confirmacion = input("¿Confirma la eliminación? (s/n): ").strip().lower()
-        if confirmacion == 's':
-            del agenda[clave]
-            print("✓ Evento eliminado exitosamente")
-        else:
-            print("Operación cancelada")
-    else:
-        print(f"\n✗ No hay eventos programados para {dia} a las {hora}")
-
-def mostrar_agenda_completa():
-    if not agenda:
-        print("\n✗ La agenda está vacía")
-        return
-    
-    print(f"\n{'='*50}")
-    print("          AGENDA COMPLETA")
-    print(f"{'='*50}")
-    
-    # Ordenar por día y hora
-    dias_orden = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
-    eventos_ordenados = sorted(agenda.items(), 
-                               key=lambda x: (dias_orden.index(x[0][0]) if x[0][0] in dias_orden else 999, x[0][1]))
-    
-    dia_actual = None
-    for (dia, hora), evento in eventos_ordenados:
-        if dia != dia_actual:
-            if dia_actual is not None:
-                print()
-            print(f"{dia}:")
-            dia_actual = dia
-        print(f"  {hora} - {evento}")
-    print(f"{'='*50}")
-
-# Programa principal
-while True:
-    mostrar_menu()
-    opcion = input("\nSeleccione una opción (1-6): ").strip()
-    
-    if opcion == "1":
-        consultar_evento()
-    elif opcion == "2":
-        ver_eventos_dia()
-    elif opcion == "3":
-        agregar_evento()
-    elif opcion == "4":
-        eliminar_evento()
-    elif opcion == "5":
-        mostrar_agenda_completa()
-    elif opcion == "6":
-        print("\n¡Hasta luego!")
-        break
-    else:
-        print("\n✗ Opción inválida. Por favor seleccione una opción del 1 al 6")
-    
-    input("\nPresione Enter para continuar...")
 
 
 
