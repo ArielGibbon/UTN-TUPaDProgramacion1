@@ -140,97 +140,119 @@
 
 # print (quim)
 
-inventario = {
-    "Manzanas": 50,
-    "Naranjas": 30,
-    "Bananas": 45,
-    "Peras": 25
-}
+# inventario = {
+#     "Manzanas": 50,
+#     "Naranjas": 30,
+#     "Bananas": 45,
+#     "Peras": 25
+# }
 
-def mostrar_menu():
-    print("\n" + "="*40)
-    print("   SISTEMA DE GESTIÓN DE STOCK")
-    print("="*40)
-    print("1. Consultar stock de un producto")
-    print("2. Agregar unidades al stock")
-    print("3. Agregar nuevo producto")
-    print("4. Mostrar todo el inventario")
-    print("5. Salir")
-    print("="*40)
+# def mostrar_menu():
+#     print("\n" + "="*40)
+#     print("   SISTEMA DE GESTIÓN DE STOCK")
+#     print("="*40)
+#     print("1. Consultar stock de un producto")
+#     print("2. Agregar unidades al stock")
+#     print("3. Agregar nuevo producto")
+#     print("4. Mostrar todo el inventario")
+#     print("5. Salir")
+#     print("="*40)
 
-def consultar_stock():
-    producto = input("\nIngrese el nombre del producto: ").strip()
+# def consultar_stock():
+#     producto = input("\nIngrese el nombre del producto: ").strip()
     
-    if producto in inventario:
-        print(f"✓ Stock de '{producto}': {inventario[producto]} unidades")
-    else:
-        print(f"✗ El producto '{producto}' no existe en el inventario")
+#     if producto in inventario:
+#         print(f"✓ Stock de '{producto}': {inventario[producto]} unidades")
+#     else:
+#         print(f"✗ El producto '{producto}' no existe en el inventario")
 
-def agregar_unidades():
-    producto = input("\nIngrese el nombre del producto: ").strip()
+# def agregar_unidades():
+#     producto = input("\nIngrese el nombre del producto: ").strip()
     
-    if producto in inventario:
-        try:
-            cantidad = int(input(f"Stock actual: {inventario[producto]} unidades\nIngrese cantidad a agregar: "))
-            if cantidad > 0:
-                inventario[producto] += cantidad
-                print(f"✓ Stock actualizado. Nuevo stock de '{producto}': {inventario[producto]} unidades")
-            else:
-                print("✗ La cantidad debe ser mayor a 0")
-        except ValueError:
-            print("✗ Error: Debe ingresar un número entero")
-    else:
-        print(f"✗ El producto '{producto}' no existe en el inventario")
-        print("   Use la opción 3 para agregar un nuevo producto")
+#     if producto in inventario:
+#         try:
+#             cantidad = int(input(f"Stock actual: {inventario[producto]} unidades\nIngrese cantidad a agregar: "))
+#             if cantidad > 0:
+#                 inventario[producto] += cantidad
+#                 print(f"✓ Stock actualizado. Nuevo stock de '{producto}': {inventario[producto]} unidades")
+#             else:
+#                 print("✗ La cantidad debe ser mayor a 0")
+#         except ValueError:
+#             print("✗ Error: Debe ingresar un número entero")
+#     else:
+#         print(f"✗ El producto '{producto}' no existe en el inventario")
+#         print("   Use la opción 3 para agregar un nuevo producto")
 
-def agregar_producto():
-    producto = input("\nIngrese el nombre del nuevo producto: ").strip()
+# def agregar_producto():
+#     producto = input("\nIngrese el nombre del nuevo producto: ").strip()
     
-    if producto in inventario:
-        print(f"✗ El producto '{producto}' ya existe con stock: {inventario[producto]} unidades")
-        print("   Use la opción 2 para agregar unidades")
-    else:
-        try:
-            cantidad = int(input("Ingrese la cantidad inicial en stock: "))
-            if cantidad >= 0:
-                inventario[producto] = cantidad
-                print(f"✓ Producto '{producto}' agregado con {cantidad} unidades")
-            else:
-                print("✗ La cantidad no puede ser negativa")
-        except ValueError:
-            print("✗ Error: Debe ingresar un número entero")
+#     if producto in inventario:
+#         print(f"✗ El producto '{producto}' ya existe con stock: {inventario[producto]} unidades")
+#         print("   Use la opción 2 para agregar unidades")
+#     else:
+#         try:
+#             cantidad = int(input("Ingrese la cantidad inicial en stock: "))
+#             if cantidad >= 0:
+#                 inventario[producto] = cantidad
+#                 print(f"✓ Producto '{producto}' agregado con {cantidad} unidades")
+#             else:
+#                 print("✗ La cantidad no puede ser negativa")
+#         except ValueError:
+#             print("✗ Error: Debe ingresar un número entero")
 
-def mostrar_inventario():
-    print("\n" + "="*40)
-    print("   INVENTARIO COMPLETO")
-    print("="*40)
-    if inventario:
-        for producto, stock in inventario.items():
-            print(f"{producto:.<30} {stock:>5} unidades")
-    else:
-        print("El inventario está vacío")
-    print("="*40)
+# def mostrar_inventario():
+#     print("\n" + "="*40)
+#     print("   INVENTARIO COMPLETO")
+#     print("="*40)
+#     if inventario:
+#         for producto, stock in inventario.items():
+#             print(f"{producto:.<30} {stock:>5} unidades")
+#     else:
+#         print("El inventario está vacío")
+#     print("="*40)
 
-# Programa principal
-while True:
-    mostrar_menu()
-    opcion = input("\nSeleccione una opción (1-5): ").strip()
+# # Programa principal
+# while True:
+#     mostrar_menu()
+#     opcion = input("\nSeleccione una opción (1-5): ").strip()
     
-    if opcion == "1":
-        consultar_stock()
-    elif opcion == "2":
-        agregar_unidades()
-    elif opcion == "3":
-        agregar_producto()
-    elif opcion == "4":
-        mostrar_inventario()
-    elif opcion == "5":
-        print("\n¡Gracias por usar el sistema de gestión de stock!")
-        break
-    else:
-        print("\n✗ Opción inválida. Por favor seleccione una opción del 1 al 5")
+#     if opcion == "1":
+#         consultar_stock()
+#     elif opcion == "2":
+#         agregar_unidades()
+#     elif opcion == "3":
+#         agregar_producto()
+#     elif opcion == "4":
+#         mostrar_inventario()
+#     elif opcion == "5":
+#         print("\n¡Gracias por usar el sistema de gestión de stock!")
+#         break
+#     else:
+#         print("\n✗ Opción inválida. Por favor seleccione una opción del 1 al 5")
     
-    input("\nPresione Enter para continuar...")
+#     input("\nPresione Enter para continuar...")
+
+
+# with open("registros.csv", "w") as archivo:
+#     encabezado = archivo.writelines().strip()
+#     print("Encabezado:", encabezado)
+#     linea1 = archivo.readline().strip()
+#     print("Primera línea:", linea1)
+#     linea2 = archivo.readline().strip()
+#     print("Segunda línea:", linea2)
+
+print("1. Escribiendo archivo")
+archivo_nuevo = open("productos.txt","w")
+archivo_nuevo.write("escoba\n")
+archivo_nuevo.write("palita\n")
+archivo_nuevo.write("trapeador\n")
+archivo_nuevo.close()
+
+archivo_nuevo = open("productos.txt","r")
+contenido = archivo_nuevo.read()
+print (contenido)
+archivo_nuevo.close()
 
 
 
+    
