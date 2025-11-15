@@ -241,18 +241,66 @@
 #     linea2 = archivo.readline().strip()
 #     print("Segunda línea:", linea2)
 
-print("1. Escribiendo archivo")
-archivo_nuevo = open("productos.txt","w")
-archivo_nuevo.write("escoba\n")
-archivo_nuevo.write("palita\n")
-archivo_nuevo.write("trapeador\n")
-archivo_nuevo.close()
+# print("1. Escribiendo archivo")
+# archivo_nuevo = open("productos.txt","w")
+# archivo_nuevo.write("escoba\n")
+# archivo_nuevo.write("palita\n")
+# archivo_nuevo.write("trapeador\n")
+# archivo_nuevo.close()
 
-archivo_nuevo = open("productos.txt","r")
-contenido = archivo_nuevo.read()
-print (contenido)
-archivo_nuevo.close()
+# archivo_nuevo = open("productos.txt","r")
+# contenido = archivo_nuevo.read()
+# print (contenido)
+# archivo_nuevo.close()
 
+# def factorial (x):
+#     f = 1
+#     for i in range (1, x+1):
+#         f *= i
+#     return f
 
-
+# def factorial_recu (x):
+#    return 1 if x == 0 else x * factorial_recu (x - 1)
     
+
+# r = 1500
+
+
+# print(factorial(r))
+# print(factorial_recu(r))
+
+
+# def sum_list (lst):
+#     if len (lst) == 0:
+#         return 0
+#     else:
+#         return lst[0]+sum_list(lst[1:])
+    
+# lista = [1,2,3,4,5,6,7,8]
+# print (f"El valor total de lista es {sum_list(lista)}")
+    
+# def repetir_frase(num, frase):
+#     if num >=1:
+#         print (frase)
+#         repetir_frase(num - 1,frase)
+# repetir_frase(3, "hola mundo")
+def fibonacci(n):
+    
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+posicion = int(input("Que posición de Fibonacci querés ver?: "))
+
+if posicion < 0:
+    print("Dato inválida: el número debe ser mayor a 0")
+else:
+    print(f"\nSerie de Fibonacci hasta la posición {posicion}:")
+    
+    for i in range(posicion + 1):
+        valor = fibonacci(i)
+        print(f"Posición {i}: {valor}")
