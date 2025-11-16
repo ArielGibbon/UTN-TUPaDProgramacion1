@@ -997,11 +997,11 @@ def mostrar_menu():
             case "3":
                 buscar_pais_nombre(paises)
             case "4":
-                print("Filtrar países (seleccionar rango)")
+                filtrar_paises_por_rango(paises)
             case "5":
-                print("Mostrar lista de países ordenados por rango")
+                paises_ordenados_por_rango(paises)
             case "6":
-                print("Mostrar estadísticas por país")
+                estadistica_paises_cargados(paises)
             case "7":
                 print("Gracias por utilizar nuestra aplicación :)")
                 break
